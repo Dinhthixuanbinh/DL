@@ -6,3 +6,10 @@ Link khóa học trên Coursera: https://www.coursera.org/professional-certifica
 Github các bài code trong khóa học: https://github.com/lmoroney/dlaicourse
  https://github.com/https-deeplearning-ai/tensorflow-1-public
 
+## Dùng hàm Callbacks để kiểm soát đào tạo
+ class myCallback(tf.keras.callbacks.Callback):
+    def on_epoch_end(self, epoch, logs={}):
+        if (log.get('loss') < 0.4):
+            print('\n Loss is low so cancelling training!')
+            self.model.stop_training = True
+ 
